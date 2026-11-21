@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 模型权重（太大，不入库，用一键下载脚本）
+models/*
+!models/README.md
+
+# 运行产物
+outputs/
+logs/
+data/
+build/
+dist/
+*.spec.bak
+
+# 临时测试脚本
+_test_*.py
+_probe_*.py
+_download_*.py
+_check_*.py
+_make_icon.py
+_gh_auth.py
