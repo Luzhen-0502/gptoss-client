@@ -1,0 +1,24 @@
+# GPT-OSS 专属 Agent 运行依赖
+# Python 3.10 ~ 3.12（本机验证：3.11.9）
+#
+# 安装命令（先装 torch 的 CPU 版，避免拉 2GB 的 CUDA 包）：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+
+# ---- 语言模型 / 视觉模型：llama.cpp 的 Python 绑定 ----
+# 一定要用预编译 wheel，不然会触发本地 C++ 编译（需要 VS Build Tools，很麻烦）
+llama-cpp-python==0.3.36
+
+# ---- 生图：diffusers ----
+torch>=2.2,<3
+diffusers>=0.30
+transformers>=4.45
+accelerate>=0.30
+safetensors>=0.4
+
+# ---- 图片显示与处理 ----
+Pillow>=10.0
+numpy>=1.24
+
+# ---- 打包（只有要出 exe 时才需要）----
+pyinstaller>=6.5
