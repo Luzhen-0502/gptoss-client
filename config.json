@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "GPT-OSS 专属 Agent",
+    "version": "1.0.0",
+    "font_size": 11,
+    "window_size": [
+      1280,
+      820
+    ]
+  },
+  "llm": {
+    "model_path": "models/gpt-oss-20b-mxfp4.gguf",
+    "n_ctx": 8192,
+    "n_batch": 512,
+    "n_threads": 0,
+    "n_gpu_layers": 0,
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_tokens": 1200,
+    "repeat_penalty": 1.05,
+    "seed": -1,
+    "flash_attn": false
+  },
+  "vision": {
+    "backend": "auto",
+    "model_path": "models/Qwen2.5-VL-3B-Instruct-Q4_K_M.gguf",
+    "mmproj_path": "models/Qwen2.5-VL-3B-Instruct-mmproj-f16.gguf",
+    "hf_model_path": "models/Qwen2.5-VL-3B-Instruct",
+    "n_ctx": 4096,
+    "n_threads": 0,
+    "max_tokens": 512,
+    "temperature": 0.2,
+    "max_image_side": 896
+  },
+  "image": {
+    "model_path": "models/sd-v1-5",
+    "variant": "sd15",
+    "steps": 12,
+    "guidance": 7.5,
+    "width": 512,
+    "height": 512,
+    "negative_prompt": "lowres, bad anatomy, bad hands, text, watermark, blurry, jpeg artifacts",
+    "quality_suffix": "masterpiece, best quality, highly detailed, sharp focus",
+    "max_prompt_chars": 600,
+    "seed": -1,
+    "max_side": 768
+  },
+  "agent": {
+    "max_steps": 6,
+    "history_turns": 8,
+    "memory_block_chars": 1800,
+    "language": "zh",
+    "auto_image_goal": "请先用 see_image 工具看懂我刚上传的图片，然后把画面整理成一段英文的生图提示词，再调用 generate_image 生成一张新图。"
+  },
+  "paths": {
+    "memory_file": "data/memory.json",
+    "output_dir": "outputs",
+    "log_file": "logs/app.log",
+    "config_file": "config.json"
+  }
+}
